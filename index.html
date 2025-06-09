@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя визитка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Моя Визитка</div>
+            <nav class="nav">
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-pop-in">Привет, я <span>Артём Горохов(Куськин)</span></h1>
+                <button class="btn btn-primary" onclick="scrollToContacts()">Связаться</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+    <div class="container">
+        <h2>Обо мне</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Я студент ЧелГУ группа ПрИ-102. Пару фактов обо мне:</p> 
+                <p>● Домосед, ловлю в интернете бэд трипы до потери пульса</p>
+                <p>● Смотрю аниме, изредка сериалы</p>
+                <p>● Играю в ритм игры и всякую дичь XD</p>
+            </div>
+            <div class="about-gif">
+                <img src="lain.gif" alt="Аниме GIF" class="gif-right">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Мои навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-circle python"></div>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-circle c"></div>
+                    <p>C#</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-circle java"></div>
+                    <p>Java</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+                <p>● Email: artem.gorokhov1122@gmail.com</p> 
+                <p>● Discord: thesinfulsoul</p>
+                <p>● TG: @KycbKuH</p>
+                <p>● VK: kyc9l</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; БЕБЕБЕ с БАБАБА</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <div id="eyes-container"></div>
+    <div class="content-overlay"></div>
+</body>
+</html>

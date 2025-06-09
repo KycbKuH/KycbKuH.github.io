@@ -1,0 +1,245 @@
+/* Mobile First стили */
+:root {
+  --primary-color: #802020;
+  --secondary-color: #222;
+  --text-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+body {
+    background: #000;
+  background-size: cover;
+  color: #fff;
+}
+.content-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Flexbox верстка */
+.header, .nav, .hero-content, .skills-grid, .portfolio-grid {
+    display: flex;
+}
+
+.header, section, footer {
+  position: relative;
+  z-index: 3;
+}
+
+.header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav {
+    gap: 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Анимации */
+.animate-pop-in {
+    animation: pop-in 0.6s ease-out forwards;
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  font-weight: bold;
+}
+
+.skill-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-circle::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    background: #020000;
+    border-radius: 50%;
+}
+
+.skill-circle.python {
+    background: conic-gradient(#e34c26 60%, #f5f5f5 0);
+}
+
+.skill-circle.c {
+    background: conic-gradient(#264de4 60%, #f5f5f5 0);
+}
+
+.skill-circle.java {
+    background: conic-gradient(#f0db4f 40%, #f5f5f5 0);
+}
+
+/* Адаптация для десктопов */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .skills-grid, .portfolio-grid {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .skill-item, .portfolio-item {
+        flex: 0 0 30%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+#eyes-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.eye-gif {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url('i-can-see-you-dark.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  transition: transform 0.5s ease;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: scale(0.5); }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+        flex-direction: column;
+    }
+    
+    .about-text, .about-gif {
+        flex: 1 1 100%;
+    }
+    
+    .gif-right {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+  .eye-gif {
+    width: 60px;
+    height: 60px;
+  }
+}
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1 1 60%;
+    min-width: 300px;
+}
+
+.about-gif {
+    flex: 1 1 30%;
+    min-width: 250px;
+}
+
+.about-gif img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+}
+
+
+.about-gif img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-gif img {
+        max-width: 80%;
+    }
+}
